@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { StyledTodoInput } from "./TodoInputStyled";
+import { useNavigate } from "react-router-dom";
 import moment from "moment";
 function TodoInput(props) {
+  const navigate = useNavigate();
   const { changer } = props;
   const always = JSON.parse(localStorage.getItem("AlwaysTodo"));
   const today = JSON.parse(localStorage.getItem("TodayTodo"));
@@ -56,7 +58,7 @@ function TodoInput(props) {
         );
       }
     }
-    window.location.reload();
+    navigate("/todolist");
     e.target.previousSibling.value = "";
   };
 
