@@ -58,7 +58,7 @@ function TodoInput(props) {
         );
       }
     }
-    navigate("/todolist");
+    window.location.reload();
     e.target.previousSibling.value = "";
   };
 

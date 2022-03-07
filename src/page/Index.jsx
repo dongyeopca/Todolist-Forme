@@ -1,18 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
-import { useNavigate } from "react-router-dom";
 function Index() {
-  const navigate = useNavigate();
-  const name = localStorage.getItem("Name");
-  useEffect(() => {
-    if (name != null) {
-      navigate("/todolist", { state: name });
-    }
-  }, []);
   const setname = (e) => {
     localStorage.setItem("Name", e.target.previousSibling.value);
-    const name = localStorage.getItem("Name");
-    navigate("/todolist", { state: name });
+    window.location.reload();
   };
   return (
     <StyledIndex>
